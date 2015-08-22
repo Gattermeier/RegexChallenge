@@ -49,6 +49,16 @@ var UserView = React.createClass({
         )
       });
 
+     var statsList = this.props.user.stats.map(function(data) {
+        return (
+          <li className="stats-data">
+            <span>{data.q_title}</span> | 
+            <span>Score: {data.score}</span> | 
+            <span>Solved in: {data.time} seconds</span> | 
+            <span>Solution: {data.solution}</span>
+          </li>
+        )
+      });
       
       return (<div className=""> 
         <div className="panel">
@@ -66,14 +76,17 @@ var UserView = React.createClass({
         </div>
         </div>
         <div className="row">
-          <div className="col-xs-6 col-sm-4 col-md-3 col-lg-3 regexResults">
+          <div className="col-xs-6 col-sm-8 col-md-7 col-lg-7 regexResults">
             <div className="panel panel-success">
               <div className="panel-heading">
                 <h4 className="panel-title">Regex Results</h4>
               </div>
               <div className="panel-body">
                 <p><span className="bold">Score:</span> {user.score}</p>
-                <p><span className="bold">Stats:</span> {user.stats}</p>
+                <p><span className="bold">Stats:</span></p>
+                <ul>
+                  {statsList}
+                </ul>
               </div> 
             </div>
           </div>
@@ -89,16 +102,7 @@ var UserView = React.createClass({
               </div>
             </div>
           </div>
-          <div className="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-            <div className="panel panel-info">
-              <div className="panel-heading">
-                <h3 className="panel-title">More info</h3>
-              </div>
-              <div className="panel-body">
-                Some more content here :)
-              </div>
-            </div>
-          </div>
+         
 
         </div>
 

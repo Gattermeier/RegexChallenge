@@ -85,7 +85,7 @@ var UserView = React.createClass({
               <div className="panel-body">
                 <ul>
                   {solvedQuestionsList}
-                </ul>
+                </ul> 
               </div>
             </div>
           </div>

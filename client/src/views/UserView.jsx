@@ -52,10 +52,8 @@ var UserView = React.createClass({
      var statsList = this.props.user.stats.map(function(data) {
         return (
           <li className="stats-data">
-            <span>{data.q_title}</span> | 
-            <span>Score: {data.score}</span> | 
-            <span>Solved in: {data.time} seconds</span> | 
-            <span>Solution: {data.solution}</span>
+            <span className="bold">{data.q_title}</span><span> solved in: {data.time} seconds with solution: {data.solution}</span>
+            <span><i>&nbsp;(Score: {data.score})</i></span>
           </li>
         )
       });
@@ -83,7 +81,7 @@ var UserView = React.createClass({
               </div>
               <div className="panel-body">
                 <p><span className="bold">Score:</span> {user.score}</p>
-                <p><span className="bold">Stats:</span></p>
+                <p><span className="bold">Details:</span></p>
                 <ul>
                   {statsList}
                 </ul>
